@@ -10,8 +10,8 @@ const stats = {}
 
 // report structure
 const levels = ['SKIP','MUST', 'SHOULD', 'MAY']
-let servers = ['NSS', 'CSS', 'RSS']
-const fileResults = ['NSS-crud-results.json', 'NSS-wac-results.json']
+let servers = ['NSS', 'CSS', 'ESS']
+const fileResults = ['crud-results.json', 'wac-results.json', 'webid-provider-tests']
 
 // load fileResults by server
 for (let server in servers) {
@@ -25,20 +25,12 @@ for (let server in servers) {
   } else { console.log('server folder exists ./' + servers[server])}
   stats[servers[server]] = {}
   for (let file in fileResults) {
-    let rawData
     // test file
     if (!fs.existsSync(`./${servers[server]}/${fileResults[file]}`)) {
       console.log(`no file : ./${servers[server]}/${fileResults[file]}`)
-      // servers = servers.filter(item => item !== servers[server])
       continue
     }
-      //try {
-    rawData = fs.readFileSync(`./${servers[server]}/${fileResults[file]}`) // (`./${server}/${fileResult}`)
-    //} catch (e) {
-      // servers = servers.filter(item => item !== servers[server])
-      // console.log(servers)
-      //return
-    //}
+    const rawData = fs.readFileSync(`./${servers[server]}/${fileResults[file]}`)
     let result = JSON.parse(rawData)
     // for each testfile
     result.testResults.forEach(item => {
@@ -66,37 +58,52 @@ for (let server in servers) {
   }
 }
 
-// print results
+// report
 let ancestor = ''
 let ancestors = ''
 let testFile = ''
 let serverTitle = ''
+
+// header
 servers.forEach(server => { serverTitle = serverTitle + itemWrite(server, 7) })
 let serversTitle = itemWrite('level', 7) + serverTitle
-console.log(`\n${itemWrite('SOLID-TEST-SUITE REPORT', 60+4)}${serversTitle}`)
+let reportContent = `\n${itemWrite('SOLID-TEST-SUITE REPORT', 60+4)}`
+
+// summary
+servers.forEach(server => {
+  reportContent = reportContent +'\n\n' + server
+  Object.keys(stats[server]).forEach(level => {
+    reportContent = reportContent +'\n' + itemWrite('  ' + level, 12) + JSON.stringify(stats[server][level])
+  })
+})
+
+// unit tests
 for (let test in report) {
   if (testFile !== report[test].testfile) {
     testFile = report[test].testfile
-    console.log(`\n${itemWrite(testFile, 60 + 4)}`)
+    reportContent = reportContent +`\n\n${itemWrite(testFile, 60 + 4)}${serversTitle}`
   }
   if (ancestor !== report[test].ancestors[0]) {
     ancestor = report[test].ancestors[0]
-    console.log('  ' + ancestor)
+    reportContent = reportContent +'\n\n  ' + ancestor
   }
   if (ancestors !== report[test].ancestors.slice(1).toString()) {
     ancestors = report[test].ancestors.slice(1).join(' > ')
-    console.log('   ' + ancestors)
+    reportContent = reportContent +'\n   ' + ancestors
   }
   let result = ''
   servers.forEach(server => {
     report[test][server] ? '' : report[test][server]
     result = result + itemWrite(report[test][server], 7)
   })
-  console.log('    ' + itemWrite(report[test].title, 60) + itemWrite(report[test].level, 7) + result)
+  reportContent = reportContent +'\n    ' + itemWrite(report[test].title, 60) + itemWrite(report[test].level, 7) + result
 }
 
-// print stats
-console.log(stats)
+// print
+console.log(reportContent)
+fs.writeFile('test-suite-report.txt', reportContent, function(err) {
+  if(err) console.log(err)
+})
 
 
 // format output
