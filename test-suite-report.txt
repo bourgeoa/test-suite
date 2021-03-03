@@ -1,252 +1,309 @@
 
 SOLID-TEST-SUITE REPORT                                         
 
-NSS
-  crud-results.json 
-         total   {"total":59,"passed":56,"pending":3}
-         undefin {"total":55,"passed":53,"pending":2}
-         MAY     {"total":1,"pending":1}
-         MUST    {"total":3,"passed":3}
-  wac-results.json  
-         total   {"total":83,"passed":71,"pending":12}
-         undefin {"total":83,"passed":71,"pending":12}
+1. SUMMARY by testFile
+
+crud-results.json
+  CSS               
+         total       {"passed":55,"failed":1,"pending":3,"total":59}
+         undefined   {"passed":52,"failed":1,"pending":2,"total":55}
+         MAY         {"passed":0,"failed":0,"pending":1,"total":1}
+         MUST        {"passed":3,"failed":0,"pending":0,"total":3}
+  NSS               
+         total       {"passed":56,"failed":0,"pending":3,"total":59}
+         undefined   {"passed":53,"failed":0,"pending":2,"total":55}
+         MAY         {"passed":0,"failed":0,"pending":1,"total":1}
+         MUST        {"passed":3,"failed":0,"pending":0,"total":3}
+
+wac-results.json
+  ESS               
+         total       {"passed":71,"failed":0,"pending":12,"total":83}
+         undefined   {"passed":71,"failed":0,"pending":12,"total":83}
+  NSS               
+         total       {"passed":71,"failed":0,"pending":12,"total":83}
+         undefined   {"passed":71,"failed":0,"pending":12,"total":83}
+  PHP               
+         total       {"passed":71,"failed":0,"pending":12,"total":83}
+         undefined   {"passed":71,"failed":0,"pending":12,"total":83}
+
+2. SUMMARY by server
 
 CSS
   crud-results.json 
-         total   {"total":59,"passed":55,"failed":1,"pending":3}
-         undefin {"total":55,"passed":52,"failed":1,"pending":2}
-         MAY     {"total":1,"pending":1}
-         MUST    {"total":3,"passed":3}
+         total       {"passed":55,"failed":1,"pending":3,"total":59}
+         undefined   {"passed":52,"failed":1,"pending":2,"total":55}
+         MAY         {"passed":0,"failed":0,"pending":1,"total":1}
+         MUST        {"passed":3,"failed":0,"pending":0,"total":3}
 
 ESS
+  wac-results.json  
+         total       {"passed":71,"failed":0,"pending":12,"total":83}
+         undefined   {"passed":71,"failed":0,"pending":12,"total":83}
 
-crud-results.json                                               NSS    CSS    ESS    
+NSS
+  crud-results.json 
+         total       {"passed":56,"failed":0,"pending":3,"total":59}
+         undefined   {"passed":53,"failed":0,"pending":2,"total":55}
+         MAY         {"passed":0,"failed":0,"pending":1,"total":1}
+         MUST        {"passed":3,"failed":0,"pending":0,"total":3}
+  wac-results.json  
+         total       {"passed":71,"failed":0,"pending":12,"total":83}
+         undefined   {"passed":71,"failed":0,"pending":12,"total":83}
+
+PHP
+  wac-results.json  
+         total       {"passed":71,"failed":0,"pending":12,"total":83}
+         undefined   {"passed":71,"failed":0,"pending":12,"total":83}
+
+3. UNIT TESTS by testFile and level
+
+crud-results.json                                               CSS           ESS           NSS           PHP           
 
  MAY
   Alice's pod
    Get RDFa > As JSON-LD
-    MAY  Triples                                                pendin pendin        
+    MAY  Triples                                                pending                     pending                     
 
-                    MAY results                             
+                    MAY results                                 0/0/1/1       0/0/0/0       0/0/1/1       0/0/0/0       
 
  MUST
   Alice's pod
    Get RDFa > As Turtle
-    MUST  Triples                                               passed passed        
+    MUST  Triples                                               passed                      passed                      
    GET Turtle > As JSON-LD
-    MUST  Triples                                               passed passed        
+    MUST  Triples                                               passed                      passed                      
    GET Turtle > As Turtle
-    MUST A123 Triples                                           passed passed        
+    MUST A123 Triples                                           passed                      passed                      
 
-                    MUST results                            
+                    MUST results                                3/0/0/3       0/0/0/0       3/0/0/3       0/0/0/0       
 
  undefined
-  Create non-container
-   in an existing container > using POST
-    creates the resource                                        passed passed        
-   in an existing container > using POST
-    adds the resource in the container listing                  passed passed        
-   in an existing container > using POST
-    emits websockets-pubsub on the container                    passed passed        
-   in an existing container > using PUT
-    creates the resource                                        passed passed        
-   in an existing container > using PUT
-    adds the resource in the container listing                  passed passed        
-   in an existing container > using PUT
-    emits websockets-pubsub on the container                    passed passed        
-   in an existing container > using PUT
-    emits websockets-pubsub on the resource                     passed passed        
-   in an existing container > using PATCH
-    creates the resource                                        passed passed        
-   in an existing container > using PATCH
-    adds the resource in the container listing                  passed passed        
-   in an existing container > using PATCH
-    emits websockets-pubsub on the container                    passed passed        
-   in an existing container > using PATCH
-    emits websockets-pubsub on the resource                     passed passed        
-   in a non-existing container > using PUT
-    creates the resource                                        passed passed        
-   in a non-existing container > using PUT
-    adds the resource in the container listing                  passed passed        
-   in a non-existing container > using PUT
-    emits websockets-pubsub on the parent                       passed passed        
-   in a non-existing container > using PUT
-    emits websockets-pubsub on the container                    passed passed        
-   in a non-existing container > using PUT
-    emits websockets-pubsub on the resource                     passed passed        
-   in a non-existing container > using PATCH
-    creates the resource                                        passed passed        
-   in a non-existing container > using PATCH
-    adds the resource in the container listing                  passed passed        
-   in a non-existing container > using PATCH
-    emits websockets-pubsub on the parent                       passed passed        
-   in a non-existing container > using PATCH
-    emits websockets-pubsub on the container                    passed passed        
-   in a non-existing container > using PATCH
-    emits websockets-pubsub on the resource                     passed passed        
-  Update
-   Using PUT (same content type)
-    updates the resource                                        passed passed        
-    emits websockets-pubsub on the resource                     passed passed        
-   Using PUT (same content)
-    updates the resource                                        passed passed        
-    emits websockets-pubsub on the resource                     passed passed        
-   Using PUT (different content type)
-    updates the resource                                        passed passed        
-    emits websockets-pubsub on the resource                     passed passed        
-   Using PATCH to add triple
-    updates the resource                                        passed passed        
-    emits websockets-pubsub on the resource                     passed passed        
-   Using PATCH to replace triple (same content)
-    updates the resource                                        passed passed        
-    emits websockets-pubsub on the resource                     passed passed        
-   Using PATCH to replace triple (present)
-    updates the resource                                        passed passed        
-    emits websockets-pubsub on the resource                     passed passed        
-   Using PATCH to replace triple (not present)
-    does not update the resource                                pendin pendin        
-    does not emit websockets-pubsub on the resource             pendin pendin        
-   Using PATCH to remove triple (present)
-    updates the resource                                        passed passed        
-    emits websockets-pubsub on the resource                     passed passed        
-   Using PATCH to remove triple (not present)
-    does not update the resource                                passed passed        
-    does not emit websockets-pubsub on the resource             passed passed        
-  Alice's storage root
-   
-    is an ldp BasicContainer                                    passed passed        
   Delete
    non-container
-    deletes the resource                                        passed passed        
-    removes the resource from the container listing             passed passed        
-    emits websockets-pubsub on the container                    passed failed        
-    emits websockets-pubsub on the resource                     passed passed        
+    deletes the resource                                        passed                      passed                      
+    removes the resource from the container listing             passed                      passed                      
+    emits websockets-pubsub on the container                    failed                      passed                      
+    emits websockets-pubsub on the resource                     passed                      passed                      
    non-empty container
-    leaves the container with the resource in it                passed passed        
-    leaves the resource                                         passed passed        
-    does not emit websockets-pubsub on the container            passed passed        
-    does not emit websockets-pubsub on the resource             passed passed        
+    leaves the container with the resource in it                passed                      passed                      
+    leaves the resource                                         passed                      passed                      
+    does not emit websockets-pubsub on the container            passed                      passed                      
+    does not emit websockets-pubsub on the resource             passed                      passed                      
    empty container
-    deletes the container                                       passed passed        
-    emits websockets-pubsub on the container                    passed passed        
+    deletes the container                                       passed                      passed                      
+    emits websockets-pubsub on the container                    passed                      passed                      
+  Create non-container
+   in an existing container > using POST
+    creates the resource                                        passed                      passed                      
+   in an existing container > using POST
+    adds the resource in the container listing                  passed                      passed                      
+   in an existing container > using POST
+    emits websockets-pubsub on the container                    passed                      passed                      
+   in an existing container > using PUT
+    creates the resource                                        passed                      passed                      
+   in an existing container > using PUT
+    adds the resource in the container listing                  passed                      passed                      
+   in an existing container > using PUT
+    emits websockets-pubsub on the container                    passed                      passed                      
+   in an existing container > using PUT
+    emits websockets-pubsub on the resource                     passed                      passed                      
+   in an existing container > using PATCH
+    creates the resource                                        passed                      passed                      
+   in an existing container > using PATCH
+    adds the resource in the container listing                  passed                      passed                      
+   in an existing container > using PATCH
+    emits websockets-pubsub on the container                    passed                      passed                      
+   in an existing container > using PATCH
+    emits websockets-pubsub on the resource                     passed                      passed                      
+   in a non-existing container > using PUT
+    creates the resource                                        passed                      passed                      
+   in a non-existing container > using PUT
+    adds the resource in the container listing                  passed                      passed                      
+   in a non-existing container > using PUT
+    emits websockets-pubsub on the parent                       passed                      passed                      
+   in a non-existing container > using PUT
+    emits websockets-pubsub on the container                    passed                      passed                      
+   in a non-existing container > using PUT
+    emits websockets-pubsub on the resource                     passed                      passed                      
+   in a non-existing container > using PATCH
+    creates the resource                                        passed                      passed                      
+   in a non-existing container > using PATCH
+    adds the resource in the container listing                  passed                      passed                      
+   in a non-existing container > using PATCH
+    emits websockets-pubsub on the parent                       passed                      passed                      
+   in a non-existing container > using PATCH
+    emits websockets-pubsub on the container                    passed                      passed                      
+   in a non-existing container > using PATCH
+    emits websockets-pubsub on the resource                     passed                      passed                      
+  Update
+   Using PUT (same content type)
+    updates the resource                                        passed                      passed                      
+    emits websockets-pubsub on the resource                     passed                      passed                      
+   Using PUT (same content)
+    updates the resource                                        passed                      passed                      
+    emits websockets-pubsub on the resource                     passed                      passed                      
+   Using PUT (different content type)
+    updates the resource                                        passed                      passed                      
+    emits websockets-pubsub on the resource                     passed                      passed                      
+   Using PATCH to add triple
+    updates the resource                                        passed                      passed                      
+    emits websockets-pubsub on the resource                     passed                      passed                      
+   Using PATCH to replace triple (same content)
+    updates the resource                                        passed                      passed                      
+    emits websockets-pubsub on the resource                     passed                      passed                      
+   Using PATCH to replace triple (present)
+    updates the resource                                        passed                      passed                      
+    emits websockets-pubsub on the resource                     passed                      passed                      
+   Using PATCH to replace triple (not present)
+    does not update the resource                                pending                     pending                     
+    does not emit websockets-pubsub on the resource             pending                     pending                     
+   Using PATCH to remove triple (present)
+    updates the resource                                        passed                      passed                      
+    emits websockets-pubsub on the resource                     passed                      passed                      
+   Using PATCH to remove triple (not present)
+    does not update the resource                                passed                      passed                      
+    does not emit websockets-pubsub on the resource             passed                      passed                      
+  Alice's storage root
+    is an ldp BasicContainer                                    passed                      passed                      
   Create container
    in an existing container > using PUT
-    creates the container                                       passed passed        
+    creates the container                                       passed                      passed                      
    in an existing container > using PUT
-    adds the resource in the existing container listing         passed passed        
+    adds the resource in the existing container listing         passed                      passed                      
    in an existing container > using PUT
-    emits websockets-pubsub on the existing container           passed passed        
+    emits websockets-pubsub on the existing container           passed                      passed                      
    in an existing container > using PUT
-    emits websockets-pubsub on the new container                passed passed        
+    emits websockets-pubsub on the new container                passed                      passed                      
   Alice's pod
    GET JSON-LD > As Turtle
-    pending  Triples                                            passed passed        
+    pending  Triples                                            passed                      passed                      
 
-wac-results.json                                                NSS    CSS    ESS    
+                    undefined results                           52/1/2/55     0/0/0/0       53/0/2/55     0/0/0/0       
+
+wac-results.json                                                CSS           ESS           NSS           PHP           
 
  undefined
   Update
    Using PUT to append
-    Is allowed with accessTo Write access on resource           passed               
-    Is disallowed with accessTo Read+Append+Control access on r passed               
-    Is allowed with default Write access on parent              passed               
-    Is disallowed with default Read+Append+Control access on pa passed               
+    Is allowed with accessTo Write access on resource                         passed        passed        passed        
+    Is disallowed with accessTo Read+Append+Control access on   
+     resource                                                                 passed        passed        passed        
+    Is allowed with default Write access on parent                            passed        passed        passed        
+    Is disallowed with default Read+Append+Control access on    
+     parent                                                                   passed        passed        passed        
    Using PUT to overwrite
-    Is allowed with accessTo Write access on resource           passed               
-    Is disallowed with accessTo Read+Append+Control access on r passed               
-    Is allowed with default Write access on parent              passed               
-    Is disallowed with default Read+Append+Control access on pa passed               
+    Is allowed with accessTo Write access on resource                         passed        passed        passed        
+    Is disallowed with accessTo Read+Append+Control access on   
+     resource                                                                 passed        passed        passed        
+    Is allowed with default Write access on parent                            passed        passed        passed        
+    Is disallowed with default Read+Append+Control access on    
+     parent                                                                   passed        passed        passed        
    Using PATCH to append
-    Is allowed with accessTo Append access on resource          passed               
-    Is allowed with accessTo Write access on resource           passed               
-    Is disallowed with accessTo Read+Control access on resource passed               
-    Is allowed with default Append access on parent             passed               
-    Is allowed with default Write access on parent              passed               
-    Is disallowed with default Read+Control access on parent    passed               
+    Is allowed with accessTo Append access on resource                        passed        passed        passed        
+    Is allowed with accessTo Write access on resource                         passed        passed        passed        
+    Is disallowed with accessTo Read+Control access on resource               passed        passed        passed        
+    Is allowed with default Append access on parent                           passed        passed        passed        
+    Is allowed with default Write access on parent                            passed        passed        passed        
+    Is disallowed with default Read+Control access on parent                  passed        passed        passed        
    Using PATCH to overwrite
-    Is allowed with accessTo Read+Write access on resource      passed               
-    Is disallowed with accessTo Read+Append+Control access on r passed               
-    Is disallowed with accessTo Write+Control access on resourc pendin               
-    Is allowed with default Read+Write access on parent         passed               
-    Is disallowed with default Read+Append+Control access on pa passed               
-    Is disallowed with default Write+Control access on parent   pendin               
+    Is allowed with accessTo Read+Write access on resource                    passed        passed        passed        
+    Is disallowed with accessTo Read+Append+Control access on   
+     resource                                                                 passed        passed        passed        
+    Is disallowed with accessTo Write+Control access on resourc               pending       pending       pending       
+    Is allowed with default Read+Write access on parent                       passed        passed        passed        
+    Is disallowed with default Read+Append+Control access on    
+     parent                                                                   passed        passed        passed        
+    Is disallowed with default Write+Control access on parent                 pending       pending       pending       
   ACL doc application
    No access on container
-    does not allow GET denied/                                  passed               
-    does not allow GET denied/noAclDoc/                         passed               
-    does not allow GET denied/noAclDoc/noAclDoc.txt             passed               
+    does not allow GET denied/                                                passed        passed        passed        
+    does not allow GET denied/noAclDoc/                                       passed        passed        passed        
+    does not allow GET denied/noAclDoc/noAclDoc.txt                           passed        passed        passed        
    ACL doc with acl:accessTo on container
-    allows GET accessTo/                                        passed               
-    does not allow GET accessTo/noAclDoc/                       passed               
-    does not allow GET accessTo/noAclDoc/noAclDoc.txt           passed               
+    allows GET accessTo/                                                      passed        passed        passed        
+    does not allow GET accessTo/noAclDoc/                                     passed        passed        passed        
+    does not allow GET accessTo/noAclDoc/noAclDoc.txt                         passed        passed        passed        
    ACL doc with acl:default on container
-    does not allow GET accessTo/                                pendin               
-    allows GET accessTo/noAclDoc/                               passed               
-    allows GET accessTo/noAclDoc/noAclDoc.txt                   passed               
+    does not allow GET accessTo/                                              pending       pending       pending       
+    allows GET accessTo/noAclDoc/                                             passed        passed        passed        
+    allows GET accessTo/noAclDoc/noAclDoc.txt                                 passed        passed        passed        
   From accessTo
    Public accessTo Read
-    Shows the correct WAC-Allow header to Bob                   passed               
-    Shows the correct WAC-Allow header to the public            passed               
+    Shows the correct WAC-Allow header to Bob                                 passed        passed        passed        
+    Shows the correct WAC-Allow header to the public                          passed        passed        passed        
    Public accessTo Read+Append, Bob accessTo Write
-    Shows the correct WAC-Allow header to Bob                   passed               
-    Shows the correct WAC-Allow header to the public            passed               
+    Shows the correct WAC-Allow header to Bob                                 passed        passed        passed        
+    Shows the correct WAC-Allow header to the public                          passed        passed        passed        
   From default
    Public default Read+Append, Bob default Write
-    Shows the correct WAC-Allow header to Bob                   passed               
-    Shows the correct WAC-Allow header to the public            passed               
+    Shows the correct WAC-Allow header to Bob                                 passed        passed        passed        
+    Shows the correct WAC-Allow header to the public                          passed        passed        passed        
   Create
    Using POST to existing container
-    Is allowed with accessTo Append access                      passed               
-    Is allowed with accessTo Write access                       passed               
-    Is disallowed otherwise                                     pendin               
+    Is allowed with accessTo Append access                                    passed        passed        passed        
+    Is allowed with accessTo Write access                                     passed        passed        passed        
+    Is disallowed otherwise                                                   pending       pending       pending       
    Using PUT in existing container
-    Is allowed with accessTo Write and default Write access     passed               
-    Is allowed with accessTo Append and default Write access    passed               
-    is disallowed without default Write                         pendin               
-    is disallowed without accessTo Write or Append              pendin               
+    Is allowed with accessTo Write and default Write access                   passed        passed        passed        
+    Is allowed with accessTo Append and default Write access                  passed        passed        passed        
+    is disallowed without default Write                                       pending       pending       pending       
+    is disallowed without accessTo Write or Append                            pending       pending       pending       
    Using PATCH in existing container
-    Is allowed with accessTo Write and default Write access     passed               
-    Is allowed with accessTo Append and default Write access    passed               
-    is disallowed without default Write                         pendin               
-    is disallowed without accessTo Write or Append              pendin               
+    Is allowed with accessTo Write and default Write access                   passed        passed        passed        
+    Is allowed with accessTo Append and default Write access                  passed        passed        passed        
+    is disallowed without default Write                                       pending       pending       pending       
+    is disallowed without accessTo Write or Append                            pending       pending       pending       
    Using PUT in non-existing container
-    Is allowed with accessTo Write and default Write access     passed               
-    Is allowed with accessTo Append and default Write access    passed               
-    is disallowed without default Write                         pendin               
-    is disallowed without accessTo Write or Append              pendin               
+    Is allowed with accessTo Write and default Write access                   passed        passed        passed        
+    Is allowed with accessTo Append and default Write access                  passed        passed        passed        
+    is disallowed without default Write                                       pending       pending       pending       
+    is disallowed without accessTo Write or Append                            pending       pending       pending       
    Using PATCH in non-existing container
-    Is allowed with accessTo Write and default Write access     passed               
-    Is allowed with accessTo Append and default Write access    passed               
-    is disallowed without default Write                         pendin               
-    is disallowed without accessTo Write or Append              pendin               
+    Is allowed with accessTo Write and default Write access                   passed        passed        passed        
+    Is allowed with accessTo Append and default Write access                  passed        passed        passed        
+    is disallowed without default Write                                       pending       pending       pending       
+    is disallowed without accessTo Write or Append                            pending       pending       pending       
   Read-LoggedIn
-   
-    Is allowed with accessTo Read access on non-container resou passed               
-    Is disallowed with accessTo Append+Write+Control access on  passed               
-    Is allowed with default Read access on parent of non-contai passed               
-    Is disallowed with default Append+Write+Control access on p passed               
-    Is allowed with accessTo Read access on container resource  passed               
-    Is allowed with default Read access on parent of container  passed               
+    Is allowed with accessTo Read access on non-container       
+     resource                                                                 passed        passed        passed        
+    Is disallowed with accessTo Append+Write+Control access on  
+     non-container resource                                                   passed        passed        passed        
+    Is allowed with default Read access on parent of            
+     non-container                                                            passed        passed        passed        
+    Is disallowed with default Append+Write+Control access on   
+     parent of non-container                                                  passed        passed        passed        
+    Is allowed with accessTo Read access on container resource                passed        passed        passed        
+    Is allowed with default Read access on parent of container                passed        passed        passed        
   Read
-    Is allowed with accessTo Read access on non-container resou passed               
-    Is disallowed with accessTo Append+Write+Control access on  passed               
-    Is allowed with default Read access on parent of non-contai passed               
-    Is disallowed with default Append+Write+Control access on p passed               
-    Is allowed with accessTo Read access on container resource  passed               
-    Is allowed with default Read access on parent of container  passed               
+    Is allowed with accessTo Read access on non-container       
+     resource                                                                 passed        passed        passed        
+    Is disallowed with accessTo Append+Write+Control access on  
+     non-container resource                                                   passed        passed        passed        
+    Is allowed with default Read access on parent of            
+     non-container                                                            passed        passed        passed        
+    Is disallowed with default Append+Write+Control access on   
+     parent of non-container                                                  passed        passed        passed        
+    Is allowed with accessTo Read access on container resource                passed        passed        passed        
+    Is allowed with default Read access on parent of container                passed        passed        passed        
   Delete
-    Is allowed with accessTo Write access on resource           passed               
-    Is disallowed with accessTo Read+Append+Control access on r passed               
-    Is allowed with default Write access on parent              passed               
-    Is disallowed with default Read+Append+Control access on pa passed               
+    Is allowed with accessTo Write access on resource                         passed        passed        passed        
+    Is disallowed with accessTo Read+Append+Control access on   
+     resource                                                                 passed        passed        passed        
+    Is allowed with default Write access on parent                            passed        passed        passed        
+    Is disallowed with default Read+Append+Control access on    
+     parent                                                                   passed        passed        passed        
   Read-Public
-    Is allowed with accessTo Read access on non-container resou passed               
-    Is disallowed with accessTo Append+Write+Control access on  passed               
-    Is allowed with default Read access on parent of non-contai passed               
-    Is disallowed with default Append+Write+Control access on p passed               
-    Is allowed with accessTo Read access on container resource  passed               
-    Is allowed with default Read access on parent of container  passed               
+    Is allowed with accessTo Read access on non-container       
+     resource                                                                 passed        passed        passed        
+    Is disallowed with accessTo Append+Write+Control access on  
+     non-container resource                                                   passed        passed        passed        
+    Is allowed with default Read access on parent of            
+     non-container                                                            passed        passed        passed        
+    Is disallowed with default Append+Write+Control access on   
+     parent of non-container                                                  passed        passed        passed        
+    Is allowed with accessTo Read access on container resource                passed        passed        passed        
+    Is allowed with default Read access on parent of container                passed        passed        passed        
   Alice's storage root
-    has an ACL                                                  passed               
+    has an ACL                                                                passed        passed        passed        
 
-                    undefined results                       
+                    undefined results                           0/0/0/0       71/0/12/83    71/0/12/83    71/0/12/83    
