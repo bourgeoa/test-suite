@@ -3,63 +3,85 @@ SOLID-TEST-SUITE REPORT
 
 1. SUMMARY by testFile
 
-crud-results.json
-  CSS               
+1.1 crud-results.json
+
+    CSS
+
          MAY         {"passed":0,"failed":0,"pending":2,"total":2}
          SHOULD      {"passed":25,"failed":6,"pending":0,"total":31}
          WPS         {"passed":17,"failed":10,"pending":0,"total":27}
          total       {"passed":42,"failed":16,"pending":2,"total":60}
-  ESS               
+
+    ESS
+
          MAY         {"passed":0,"failed":0,"pending":2,"total":2}
          SHOULD      {"passed":22,"failed":9,"pending":0,"total":31}
          WPS         {"passed":0,"failed":0,"pending":27,"total":27}
          total       {"passed":22,"failed":9,"pending":29,"total":60}
-  NSS               
+
+    NSS
+
          MAY         {"passed":0,"failed":0,"pending":2,"total":2}
          SHOULD      {"passed":25,"failed":6,"pending":0,"total":31}
          WPS         {"passed":18,"failed":9,"pending":0,"total":27}
          total       {"passed":43,"failed":15,"pending":2,"total":60}
 
-wac-results.json
-  CSS               
+1.2 wac-results.json
+
+    CSS
+
          SHOULD      {"passed":61,"failed":22,"pending":0,"total":83}
          total       {"passed":61,"failed":22,"pending":0,"total":83}
-  ESS               
+    ESS
+
          SHOULD      {"passed":61,"failed":22,"pending":0,"total":83}
          total       {"passed":61,"failed":22,"pending":0,"total":83}
-  NSS               
+    NSS
+
          SHOULD      {"passed":67,"failed":16,"pending":0,"total":83}
          total       {"passed":67,"failed":16,"pending":0,"total":83}
 
 2. SUMMARY by server
 
 CSS
-  crud-results.json 
+
+    crud-results.json
+
          MAY         {"passed":0,"failed":0,"pending":2,"total":2}
          SHOULD      {"passed":25,"failed":6,"pending":0,"total":31}
          WPS         {"passed":17,"failed":10,"pending":0,"total":27}
          total       {"passed":42,"failed":16,"pending":2,"total":60}
-  wac-results.json  
+
+    wac-results.json
+
          SHOULD      {"passed":61,"failed":22,"pending":0,"total":83}
          total       {"passed":61,"failed":22,"pending":0,"total":83}
 
 ESS
-  crud-results.json 
+
+    crud-results.json
+
          MAY         {"passed":0,"failed":0,"pending":2,"total":2}
          SHOULD      {"passed":22,"failed":9,"pending":0,"total":31}
          WPS         {"passed":0,"failed":0,"pending":27,"total":27}
          total       {"passed":22,"failed":9,"pending":29,"total":60}
-  wac-results.json  
+
+  wac-results.json
+
          SHOULD      {"passed":61,"failed":22,"pending":0,"total":83}
          total       {"passed":61,"failed":22,"pending":0,"total":83}
 
 NSS
-  crud-results.json 
+
+  crud-results.json
+
          MAY         {"passed":0,"failed":0,"pending":2,"total":2}
          SHOULD      {"passed":25,"failed":6,"pending":0,"total":31}
          WPS         {"passed":18,"failed":9,"pending":0,"total":27}
          total       {"passed":43,"failed":15,"pending":2,"total":60}
-  wac-results.json  
+
+  wac-results.json
+
          SHOULD      {"passed":67,"failed":16,"pending":0,"total":83}
          total       {"passed":67,"failed":16,"pending":0,"total":83}
 
@@ -67,23 +89,23 @@ NSS
 
 crud-results.json                                               CSS           ESS           NSS           
 
- MAY
-  Alice's pod
-   Get RDFa > As JSON-LD
-    A001 A001 Triples                                           pending       pending       pending       
-   Get RDFa > As Turtle
-    A002 A002 Triples                                           pending       pending       pending       
+    MAY
+     Alice's pod
+      Get RDFa > As JSON-LD
+       A001 A001 Triples                                           pending       pending       pending       
+      Get RDFa > As Turtle
+       A002 A002 Triples                                           pending       pending       pending       
 
-                    MAY results                                 0/0/2/2       0/0/2/2       0/0/2/2       
+                       MAY results                                 0/0/2/2       0/0/2/2       0/0/2/2       
 
- SHOULD
-  Create non-container
-   in an existing container > using POST
-    T001 creates the resource                                   passed        failed        passed        
-   in an existing container > using POST
-    T002 adds the resource in the container listing             passed        failed        passed        
-   in an existing container > using PUT
-    T004 creates the resource                                   passed        passed        passed        
+    SHOULD
+     Create non-container
+      in an existing container > using POST
+       T001 creates the resource                                   passed        failed        passed        
+      in an existing container > using POST
+       T002 adds the resource in the container listing             passed        failed        passed        
+      in an existing container > using PUT
+       T004 creates the resource                                   passed        passed        passed        
    in an existing container > using PUT
     T005 adds the resource in the container listing             passed        passed        passed        
    in an existing container > using PATCH
