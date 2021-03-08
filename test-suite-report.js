@@ -52,14 +52,18 @@ for (let server in servers) {
           const testName = [fileResults[file], ...ancestors, item.title]
           let level = levels.find(level => item.title.split(' ')[0] === level)
           
-          // find and remove level, id (no level default to SHOULD)
+          // find and remove level, id
           if (level) item.title = item.title.substring(level.length)
-          let id = level ? item.title.split(' ')[1] : 'T' + ('00' + ident).slice(-3)
-          if (!id) id = 'T' + ('00' + ident).slice(-3)
-          if (!level) level = 'SHOULD' // undefined'
+          let id = level ? item.title.split(' ')[1] : '' // 'T' + ('00' + ident).slice(-3)
+          if (!id) {
+            id = 'T' + ('00' + ident).slice(-3)
+            item.title = id + ' ' + item.title
+          }
           //remove remaining beginning spaces
-          item.title = id + ' ' + item.title.replace(/\s*/, '')
+          item.title = item.title.replace(/\s*/, '')
 
+          // defaukt level to SHOULD
+          if (!level) level = 'SHOULD'
           report[testName] = report[testName] ? report[testName] : { testfile: fileResults[file] , ancestors, title: item.title , level, id }
 
           if (!report[testName]['status']) report[testName]['status'] = {}
@@ -256,7 +260,7 @@ sortedReport.forEach(test => {
 
 // print
 console.log(reportContent)
-fs.writeFile('test-suite-report.md', reportContent + '\n', function(err) {
+fs.writeFile('test-suite-report.txt', reportContent + '\n', function(err) {
   if(err) console.log(err)
 })
 
