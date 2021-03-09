@@ -209,20 +209,32 @@ sortedReport.forEach(test => {
       }
       levelTitle = test.level
       ancestor = ''
-      reportContent = reportContent + `\n\n ${levelTitle}`
+      reportContent = reportContent + `\n\n  - ${levelTitle}`
     }
 
     // break title on ancestors[0]
     if (ancestor !== test.ancestors[0]) {
+      if (ancestor !== '' ) reportContent = reportContent + '</thead></table>'
+
       ancestor = test.ancestors[0]
-      reportContent = reportContent +'\n  - ' + ancestor
+      //reportContent = reportContent +'\n- ' + ancestor
+      reportContent = reportContent +`\n\n    <table><thead><tr><td width=465>${ancestor}</td>`
+      servers.forEach(server => reportContent = reportContent + `<td width=80>${server}</td>`)
+      reportContent = reportContent + '</tr></thead></table>'
     }
     if (ancestors !== test.ancestors.slice(1).join(' > ')) { // toString()) {
       ancestors = test.ancestors.slice(1).join(' > ')
-      if (ancestors) reportContent = reportContent +'\n\n    - ' + ancestors
+      // if (ancestors) reportContent = reportContent +'\n\n    - ' + ancestors
+      if (ancestors) {
+        reportContent = reportContent + `\n\n    <table><thead>`
+        reportContent = reportContent +`<tr><td width=465>${ancestors}</td>`
+        // servers.forEach(server => reportContent = reportContent + `<td width=80>${server}</td>`)
+        reportContent = reportContent + '</tr>'
+      }
     }
+    // reportContent = reportContent + '</thead></table>'
     let result = ''
-    servers.forEach(server => {
+    servers.   forEach(server => {
       test.status[server] ? '' : test.status[server]
       result = result + setStringLength(test.status[server], 14)
     })
@@ -237,7 +249,7 @@ sortedReport.forEach(test => {
     // }
   })
 function table (testItem, firstLine = '') {
-  let test = `<table><tbody><tr><td><a #${testItem.id}>${testItem.id} </td><td width=400>${testItem.title.split(testItem.id + '')[1]}</td>`
+  let test = `<table><tbody><tr><td><a href=#${testItem.id}>${testItem.id}</a></td><td width=400>${testItem.title.split(testItem.id + '')[1]}</td>`
   servers.forEach(server => test = test + `<td width=55>${testItem.status[server]}</td>`) //  ? '' : testItem.status[server]}</td>`)
   test = test + '</tr></tbody></table>'
   return test
@@ -265,7 +277,7 @@ sortedReport.forEach(test => {
 
 // print
 console.log(reportContent)
-fs.writeFile('test-suite-report-2.md', reportContent + '\n', function(err) {
+fs.writeFile('test-suite-report.md', reportContent + '\n', function(err) {
   if(err) console.log(err)
 })
 
