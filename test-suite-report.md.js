@@ -189,23 +189,33 @@ summary(servers, fileResults)
 
 // report unit tests
 reportContent = reportContent + '\n\n### 3. UNIT TESTS by testFile and level'
+let tableBegin = true
+let tableEnd = false
 sortedReport.forEach(test => {
-
   // break title on testFile
   if (testFile !== test.testfile) {
+    if (testFile !== '' && tableEnd) {
+      reportContent = reportContent + '</tbody></table>'
+      tableEnd = false
+    }
     if (testFile !== '') reportContent = reportContent + `\n\n${setStringLength('', 20)}${setStringLength(levelTitle + ' results', 44)}${totals(levelTitle)}`
       ancestor = ''
       ancestors = ''
       levelTitle = ''      
       testFile = test.testfile
-      reportContent = reportContent +`\n\n${setStringLength(testFile, 60 + 4)}${serversTitle}`
+      reportContent = reportContent +`\n\n- ${setStringLength(testFile, 60 + 4)}` //${serversTitle}`
     }
     // break title on level
     if (levelTitle !== test.level) {
-
+      if (levelTitle !== '' && tableEnd) {
+        reportContent = reportContent + '</tbody></table>'
+        tableEnd = false
+      }
+  
       // print totals, init level sub-totals
       if (levelTitle !== '') {
         reportContent = reportContent + `\n\n${setStringLength('', 20)}${setStringLength(levelTitle + ' results', 44)}${totals(levelTitle)}`
+        tableBegin = true
       }
       levelTitle = test.level
       ancestor = ''
@@ -214,20 +224,22 @@ sortedReport.forEach(test => {
 
     // break title on ancestors[0]
     if (ancestor !== test.ancestors[0]) {
-      if (ancestor !== '' ) reportContent = reportContent + '</thead></table>'
+      // if (ancestor === '') reportContent = reportContent + '</tbody></table>'
 
       ancestor = test.ancestors[0]
       //reportContent = reportContent +'\n- ' + ancestor
       reportContent = reportContent +`\n\n    <table><thead><tr><td width=465>${ancestor}</td>`
       servers.forEach(server => reportContent = reportContent + `<td width=80>${server}</td>`)
       reportContent = reportContent + '</tr></thead></table>'
+      tableBegin = true
     }
     if (ancestors !== test.ancestors.slice(1).join(' > ')) { // toString()) {
       ancestors = test.ancestors.slice(1).join(' > ')
       // if (ancestors) reportContent = reportContent +'\n\n    - ' + ancestors
       if (ancestors) {
-        reportContent = reportContent + `\n\n    <table><thead>`
-        reportContent = reportContent +`<tr><td width=465>${ancestors}</td>`
+        tableBegin = false
+        reportContent = reportContent + `\n\n    <table><tbody>`
+        reportContent = reportContent +`<tr><td></td><td width=465>${ancestors}</td>`
         // servers.forEach(server => reportContent = reportContent + `<td width=80>${server}</td>`)
         reportContent = reportContent + '</tr>'
       }
@@ -245,15 +257,15 @@ sortedReport.forEach(test => {
       reportContent = reportContent + '\n    ' + setStringLength(firstLine, 60)
       reportContent = reportContent + '\n    ' + table(test, firstLine) // setStringLength(test.title.split(firstLine)[1], 60) + result
     } else { */
+      if (tableBegin)  {
+        reportContent = reportContent + '<table><tbody>'
+        tableBegin = false
+      }
+
       reportContent = reportContent + '\n    ' + table(test) // setStringLength(test.title, 60) + result
     // }
   })
-function table (testItem, firstLine = '') {
-  let test = `<table><tbody><tr><td><a href=#${testItem.id}>${testItem.id}</a></td><td width=400>${testItem.title.split(testItem.id + '')[1]}</td>`
-  servers.forEach(server => test = test + `<td width=55>${testItem.status[server]}</td>`) //  ? '' : testItem.status[server]}</td>`)
-  test = test + '</tr></tbody></table>'
-  return test
-}
+reportContent = reportContent + '</tbody></table>'
 reportContent = reportContent + `\n\n${setStringLength('', 20)}${setStringLength(levelTitle + ' results', 44)}${totals(levelTitle)}`
 
 // report errors by testItem
@@ -265,7 +277,7 @@ sortedReport.forEach(test => {
   Object.keys(test.errors).forEach(server => {
     if (test.errors[server]) {
       if (ident === '') {
-        reportContent = reportContent + `\n#### <a name="${test.id}">${test.id}</a>\n`
+        reportContent = reportContent + `\n#### <a name="${test.id}">${test.id}</a> ${test.testfile} > ${JSON.stringify(test.ancestors)}\n`
         ident = test.id
       }
       reportContent = reportContent + '\n  - ' + server + '\n'
@@ -280,6 +292,18 @@ console.log(reportContent)
 fs.writeFile('test-suite-report.md', reportContent + '\n', function(err) {
   if(err) console.log(err)
 })
+
+// format table
+function table (testItem, firstLine = '') {
+  let test = `<tr><td><a href=#${testItem.id}>${testItem.id}</a></td><td width=400>${testItem.title.split(testItem.id + '')[1]}</td>`
+  servers.forEach(server => {
+    // console.log('failed'+testItem.status[server])
+    let status = testItem.status[server] === 'failed' ? `<a href=#${testItem.id}>${testItem.status[server]}</a>` : `${testItem.status[server]}`
+    test = test + `<td width=55>${status}</td>` //  ? '' : testItem.status[server]}</td>`)
+    })
+    test = test + '</tr>'
+  return test
+}
 
 // format output
 function setStringLength (item, length) {
@@ -308,7 +332,7 @@ function totals (levelTitle) {
   return sums
 }
 
-// summary by which ever order of servers, fileResults
+// summary by which ever order of : servers, fileResults
 function summary (item1, item2) {
   item1.forEach(item => {
     let itemHeader = ''
