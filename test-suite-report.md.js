@@ -177,18 +177,18 @@ for (let server in serversRef) {
 // header
 servers.forEach(server => { serverTitle = serverTitle + setStringLength(server, 14) })
 let serversTitle = serverTitle
-let reportContent = `\n${setStringLength('SOLID-TEST-SUITE REPORT', 60+4)}`
+let reportContent = `\n## ${setStringLength('SOLID-TEST-SUITE REPORT', 60+4)}`
 
 // summary by file
-reportContent = reportContent + '\n\n1. SUMMARY by testFile'
+reportContent = reportContent + '\n\n### 1. SUMMARY by testFile'
 summary(fileResults, servers)
 
 // summary by server
-reportContent = reportContent + '\n\n2. SUMMARY by server'
+reportContent = reportContent + '\n\n### 2. SUMMARY by server'
 summary(servers, fileResults)
 
 // report unit tests
-reportContent = reportContent + '\n\n3. UNIT TESTS by testFile and level'
+reportContent = reportContent + '\n\n### 3. UNIT TESTS by testFile and level'
 sortedReport.forEach(test => {
 
   // break title on testFile
@@ -215,11 +215,11 @@ sortedReport.forEach(test => {
     // break title on ancestors[0]
     if (ancestor !== test.ancestors[0]) {
       ancestor = test.ancestors[0]
-      reportContent = reportContent +'\n  ' + ancestor
+      reportContent = reportContent +'\n  - ' + ancestor
     }
     if (ancestors !== test.ancestors.slice(1).join(' > ')) { // toString()) {
       ancestors = test.ancestors.slice(1).join(' > ')
-      if (ancestors) reportContent = reportContent +'\n   ' + ancestors
+      if (ancestors) reportContent = reportContent +'\n\n    - ' + ancestors
     }
     let result = ''
     servers.forEach(server => {
@@ -228,18 +228,24 @@ sortedReport.forEach(test => {
     })
 
     // split test.title on last space from length 60
-    if (test.title.length > 60) {
+    /* if (test.title.length > 60) {
       const firstLine = test.title.slice(0, 60).substring(0, test.title.slice(0, 60).lastIndexOf(' '))
       reportContent = reportContent + '\n    ' + setStringLength(firstLine, 60)
-      reportContent = reportContent + '\n    ' + setStringLength(test.title.split(firstLine)[1], 60) + result
-    } else {
-      reportContent = reportContent + '\n    ' + setStringLength(test.title, 60) + result
-    }
+      reportContent = reportContent + '\n    ' + table(test, firstLine) // setStringLength(test.title.split(firstLine)[1], 60) + result
+    } else { */
+      reportContent = reportContent + '\n    ' + table(test) // setStringLength(test.title, 60) + result
+    // }
   })
+function table (testItem, firstLine = '') {
+  let test = `<table><tbody><tr><td><a #${testItem.id}>${testItem.id} </td><td width=400>${testItem.title.split(testItem.id + '')[1]}</td>`
+  servers.forEach(server => test = test + `<td width=55>${testItem.status[server]}</td>`) //  ? '' : testItem.status[server]}</td>`)
+  test = test + '</tr></tbody></table>'
+  return test
+}
 reportContent = reportContent + `\n\n${setStringLength('', 20)}${setStringLength(levelTitle + ' results', 44)}${totals(levelTitle)}`
 
 // report errors by testItem
-reportContent = reportContent + '\n\n4. ERROR REPORT\n'
+reportContent = reportContent + '\n\n### 4. ERROR REPORT\n'
 sortedReport = arrayReport.keySort({ id: 'asc'})
 
 sortedReport.forEach(test => {
@@ -247,19 +253,19 @@ sortedReport.forEach(test => {
   Object.keys(test.errors).forEach(server => {
     if (test.errors[server]) {
       if (ident === '') {
-        reportContent = reportContent + '\n' + test.id
+        reportContent = reportContent + `\n#### <a name="${test.id}">${test.id}</a>\n`
         ident = test.id
       }
-      reportContent = reportContent + '\n  ' + server
+      reportContent = reportContent + '\n  - ' + server + '\n'
       let lines = test.errors[server].split('\n')
-      lines.map(line => reportContent = reportContent + '\n    ' + line)
+      lines.map(line => reportContent = reportContent + '\n    ' + line + '\n')
     }
   })
 })
 
 // print
 console.log(reportContent)
-fs.writeFile('test-suite-report.txt', reportContent + '\n', function(err) {
+fs.writeFile('test-suite-report-2.md', reportContent + '\n', function(err) {
   if(err) console.log(err)
 })
 
@@ -306,10 +312,10 @@ function summary (item1, item2) {
       if (stats[server]) {
         if (stats[server][file]) {
           if (itemHeader === '') {
-            reportContent = reportContent +'\n\n' + item
+            reportContent = reportContent +'\n\n- ' + item + '\n'
             itemHeader = item
           }
-          reportContent = reportContent + '\n' + setStringLength('  ' + subItem, 20)
+          reportContent = reportContent + '\n' + setStringLength('  ' + subItem, 20) + '\n'
           Object.keys(stats[server][file]).sort().forEach(level => {
             stats[server][file][level] = Object.assign({}, results, stats[server][file][level])
             reportContent = reportContent +'\n       ' + setStringLength('  ' + level, 14) + JSON.stringify(stats[server][file][level])

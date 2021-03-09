@@ -80,23 +80,18 @@ crud-results.json                                               CSS           ES
   Create non-container
    in an existing container > using POST
     T001 creates the resource                                   passed        failed        passed        
-   in an existing container > using POST
     T002 adds the resource in the container listing             passed        failed        passed        
    in an existing container > using PUT
     T004 creates the resource                                   passed        passed        passed        
-   in an existing container > using PUT
     T005 adds the resource in the container listing             passed        passed        passed        
    in an existing container > using PATCH
     T008 creates the resource                                   failed        failed        failed        
-   in an existing container > using PATCH
     T009 adds the resource in the container listing             failed        failed        failed        
    in a non-existing container > using PUT
     T012 creates the resource                                   passed        passed        passed        
-   in a non-existing container > using PUT
     T013 adds the resource in the container listing             passed        passed        passed        
    in a non-existing container > using PATCH
     T017 creates the resource                                   failed        failed        failed        
-   in a non-existing container > using PATCH
     T018 adds the resource in the container listing             failed        failed        failed        
   Update
    Using PUT, overwriting plain text with plain text
@@ -131,7 +126,6 @@ crud-results.json                                               CSS           ES
   Create container
    in an existing container > using PUT
     T051 creates the container                                  passed        passed        passed        
-   in an existing container > using PUT
     T052 adds the resource in the existing container listing    passed        passed        passed        
   Alice's pod
    GET Turtle > As JSON-LD
@@ -295,23 +289,17 @@ crud-results.json                                               CSS           ES
     T003   emits websockets-pubsub on the container             passed        pending       passed        
    in an existing container > using PUT
     T006   emits websockets-pubsub on the container             passed        pending       passed        
-   in an existing container > using PUT
     T007   emits websockets-pubsub on the resource              passed        pending       passed        
    in an existing container > using PATCH
     T010   emits websockets-pubsub on the container             failed        pending       failed        
-   in an existing container > using PATCH
     T011   emits websockets-pubsub on the resource              failed        pending       failed        
    in a non-existing container > using PUT
     T014   emits websockets-pubsub on the parent                passed        pending       passed        
-   in a non-existing container > using PUT
     T015   emits websockets-pubsub on the container             passed        pending       passed        
-   in a non-existing container > using PUT
     T016   emits websockets-pubsub on the resource              passed        pending       passed        
    in a non-existing container > using PATCH
     T019   emits websockets-pubsub on the parent                failed        pending       failed        
-   in a non-existing container > using PATCH
     T020   emits websockets-pubsub on the container             failed        pending       failed        
-   in a non-existing container > using PATCH
     T021   emits websockets-pubsub on the resource              failed        pending       failed        
   Update
    Using PUT, overwriting plain text with plain text
@@ -344,7 +332,6 @@ crud-results.json                                               CSS           ES
   Create container
    in an existing container > using PUT
     T053   emits websockets-pubsub on the existing container    passed        pending       passed        
-   in an existing container > using PUT
     T054   emits websockets-pubsub on the new container         passed        pending       passed        
 
                     WPS results                                 17/10/0/27    0/0/27/27     18/9/0/27     
@@ -365,101 +352,101 @@ T003
     
 T008
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
 T009
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    [32m- Expected  - 1[39m
-    [31m+ Received  + 0[39m
+    - Expected  - 1
+    + Received  + 0
     
-    [2m  Array [[22m
-    [2m    "http://localhost:3000/solid-crud-tests-1615212782493/exists/exists.ttl",[22m
-    [32m-   "http://localhost:3000/solid-crud-tests-1615212782493/exists/new.ttl",[39m
-    [2m  ][22m
+      Array [
+        "http://localhost:3000/solid-crud-tests-1615212782493/exists/exists.ttl",
+    -   "http://localhost:3000/solid-crud-tests-1615212782493/exists/new.ttl",
+      ]
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    [32m- Expected  - 1[39m
-    [31m+ Received  + 0[39m
+    - Expected  - 1
+    + Received  + 0
     
-    [2m  Array [[22m
-    [2m    "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138854633/exists/exists.ttl",[22m
-    [32m-   "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138854633/exists/new.ttl",[39m
-    [2m  ][22m
+      Array [
+        "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138854633/exists/exists.ttl",
+    -   "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138854633/exists/new.ttl",
+      ]
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    [32m- Expected  - 1[39m
-    [31m+ Received  + 0[39m
+    - Expected  - 1
+    + Received  + 0
     
-    [2m  Array [[22m
-    [2m    "https://alice.localhost:8443/solid-crud-tests-1615212440668/exists/exists.ttl",[22m
-    [32m-   "https://alice.localhost:8443/solid-crud-tests-1615212440668/exists/new.ttl",[39m
-    [2m  ][22m
+      Array [
+        "https://alice.localhost:8443/solid-crud-tests-1615212440668/exists/exists.ttl",
+    -   "https://alice.localhost:8443/solid-crud-tests-1615212440668/exists/new.ttl",
+      ]
     
 T010
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212782493/exists/", "pub http://localhost:3000/solid-crud-tests-1615212782493/exists/"][39m
-    Received: [31m["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212782493/exists/"][39m
+    Expected: ArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212782493/exists/", "pub http://localhost:3000/solid-crud-tests-1615212782493/exists/"]
+    Received: ["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212782493/exists/"]
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212440668/exists/", "pub https://alice.localhost:8443/solid-crud-tests-1615212440668/exists/"][39m
-    Received: [31m["ack https://alice.localhost:8443/solid-crud-tests-1615212440668/exists/"][39m
+    Expected: ArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212440668/exists/", "pub https://alice.localhost:8443/solid-crud-tests-1615212440668/exists/"]
+    Received: ["ack https://alice.localhost:8443/solid-crud-tests-1615212440668/exists/"]
     
 T011
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212782493/exists/new.ttl", "pub http://localhost:3000/solid-crud-tests-1615212782493/exists/new.ttl"][39m
-    Received: [31m["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212782493/exists/new.ttl"][39m
+    Expected: ArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212782493/exists/new.ttl", "pub http://localhost:3000/solid-crud-tests-1615212782493/exists/new.ttl"]
+    Received: ["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212782493/exists/new.ttl"]
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212440668/exists/new.ttl", "pub https://alice.localhost:8443/solid-crud-tests-1615212440668/exists/new.ttl"][39m
-    Received: [31m["ack https://alice.localhost:8443/solid-crud-tests-1615212440668/exists/new.ttl"][39m
+    Expected: ArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212440668/exists/new.ttl", "pub https://alice.localhost:8443/solid-crud-tests-1615212440668/exists/new.ttl"]
+    Received: ["ack https://alice.localhost:8443/solid-crud-tests-1615212440668/exists/new.ttl"]
     
 T017
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
 T018
   CSS
@@ -473,530 +460,530 @@ T018
     
 T019
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212782500/", "pub http://localhost:3000/solid-crud-tests-1615212782500/"][39m
-    Received: [31m["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212782500/"][39m
+    Expected: ArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212782500/", "pub http://localhost:3000/solid-crud-tests-1615212782500/"]
+    Received: ["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212782500/"]
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212440674/", "pub https://alice.localhost:8443/solid-crud-tests-1615212440674/"][39m
-    Received: [31m["ack https://alice.localhost:8443/solid-crud-tests-1615212440674/"][39m
+    Expected: ArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212440674/", "pub https://alice.localhost:8443/solid-crud-tests-1615212440674/"]
+    Received: ["ack https://alice.localhost:8443/solid-crud-tests-1615212440674/"]
     
 T020
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212782500/new/", "pub http://localhost:3000/solid-crud-tests-1615212782500/new/"][39m
-    Received: [31m["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212782500/new/"][39m
+    Expected: ArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212782500/new/", "pub http://localhost:3000/solid-crud-tests-1615212782500/new/"]
+    Received: ["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212782500/new/"]
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212440674/new/", "pub https://alice.localhost:8443/solid-crud-tests-1615212440674/new/"][39m
-    Received: [31m["ack https://alice.localhost:8443/solid-crud-tests-1615212440674/new/"][39m
+    Expected: ArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212440674/new/", "pub https://alice.localhost:8443/solid-crud-tests-1615212440674/new/"]
+    Received: ["ack https://alice.localhost:8443/solid-crud-tests-1615212440674/new/"]
     
 T021
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212782500/new/new.ttl", "pub http://localhost:3000/solid-crud-tests-1615212782500/new/new.ttl"][39m
-    Received: [31m["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212782500/new/new.ttl"][39m
+    Expected: ArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212782500/new/new.ttl", "pub http://localhost:3000/solid-crud-tests-1615212782500/new/new.ttl"]
+    Received: ["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212782500/new/new.ttl"]
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212440674/new/new.ttl", "pub https://alice.localhost:8443/solid-crud-tests-1615212440674/new/new.ttl"][39m
-    Received: [31m["ack https://alice.localhost:8443/solid-crud-tests-1615212440674/new/new.ttl"][39m
+    Expected: ArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212440674/new/new.ttl", "pub https://alice.localhost:8443/solid-crud-tests-1615212440674/new/new.ttl"]
+    Received: ["ack https://alice.localhost:8443/solid-crud-tests-1615212440674/new/new.ttl"]
     
 T024
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl#contents"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl#the"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl#replaced"}}][39m
-    Received: [31m[{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl#hello"}}, {"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/ns/ldp#RDFSource"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl"}}][39m
+    Expected: ArrayContaining [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl#contents"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl#the"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl#replaced"}}]
+    Received: [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl#hello"}}, {"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/ns/ldp#RDFSource"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884047/exists/exists1.ttl"}}]
     
 T028
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl#hello"}}, {"graph": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl#fact"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl#that"}}][39m
-    Received: [31m[{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl#hello"}}][39m
+    Expected: ArrayContaining [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl#hello"}}, {"graph": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl#fact"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl#that"}}]
+    Received: [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl#hello"}}]
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl#hello"}}, {"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl#fact"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl#that"}}][39m
-    Received: [31m[{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl#hello"}}, {"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/ns/ldp#RDFSource"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl"}}][39m
+    Expected: ArrayContaining [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl#hello"}}, {"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl#fact"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl#that"}}]
+    Received: [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl#hello"}}, {"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/ns/ldp#RDFSource"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884052/exists/exists3.ttl"}}]
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl#hello"}}, {"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl#fact"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl#that"}}][39m
-    Received: [31m[{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl#hello"}}][39m
+    Expected: ArrayContaining [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl#hello"}}, {"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl#fact"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl#that"}}]
+    Received: [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl#hello"}}]
     
 T029
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl", "pub http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl"][39m
-    Received: [31m["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl"][39m
+    Expected: ArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl", "pub http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl"]
+    Received: ["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212794049/exists/exists3.ttl"]
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl", "pub https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl"][39m
-    Received: [31m["ack https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl"][39m
+    Expected: ArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl", "pub https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl"]
+    Received: ["ack https://alice.localhost:8443/solid-crud-tests-1615212455555/exists/exists3.ttl"]
     
 T031
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212794051/exists/exists4.ttl", "pub http://localhost:3000/solid-crud-tests-1615212794051/exists/exists4.ttl"][39m
-    Received: [31m["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212794051/exists/exists4.ttl"][39m
+    Expected: ArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212794051/exists/exists4.ttl", "pub http://localhost:3000/solid-crud-tests-1615212794051/exists/exists4.ttl"]
+    Received: ["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212794051/exists/exists4.ttl"]
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212455557/exists/exists4.ttl", "pub https://alice.localhost:8443/solid-crud-tests-1615212455557/exists/exists4.ttl"][39m
-    Received: [31m["ack https://alice.localhost:8443/solid-crud-tests-1615212455557/exists/exists4.ttl"][39m
+    Expected: ArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212455557/exists/exists4.ttl", "pub https://alice.localhost:8443/solid-crud-tests-1615212455557/exists/exists4.ttl"]
+    Received: ["ack https://alice.localhost:8443/solid-crud-tests-1615212455557/exists/exists4.ttl"]
     
 T032
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl#fact"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl#that"}}][39m
-    Received: [31m[{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl#hello"}}][39m
+    Expected: ArrayContaining [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl#fact"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl#that"}}]
+    Received: [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl#hello"}}]
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl#fact"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl#that"}}][39m
-    Received: [31m[{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/ns/ldp#RDFSource"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl"}}, {"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl#hello"}}][39m
+    Expected: ArrayContaining [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl#fact"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl#that"}}]
+    Received: [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/ns/ldp#RDFSource"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl"}}, {"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://pod-compat.inrupt.com/solidtestsuite/solidtestsuite/solid-crud-tests-1615138884055/exists/exists4.ttl#hello"}}]
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl#fact"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl#that"}}][39m
-    Received: [31m[{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl#hello"}}][39m
+    Expected: ArrayContaining [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl#fact"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl#that"}}]
+    Received: [{"graph": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl"}, "object": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl#world"}, "predicate": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl#linked"}, "subject": {"classOrder": 5, "termType": "NamedNode", "value": "https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl#hello"}}]
     
 T033
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl", "pub http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl"][39m
-    Received: [31m["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl"][39m
+    Expected: ArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl", "pub http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl"]
+    Received: ["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212794053/exists/exists4.ttl"]
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl", "pub https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl"][39m
-    Received: [31m["ack https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl"][39m
+    Expected: ArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl", "pub https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl"]
+    Received: ["ack https://alice.localhost:8443/solid-crud-tests-1615212455559/exists/exists4.ttl"]
     
 T037
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212794056/exists/exists6.ttl", "pub http://localhost:3000/solid-crud-tests-1615212794056/exists/exists6.ttl"][39m
-    Received: [31m["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212794056/exists/exists6.ttl"][39m
+    Expected: ArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212794056/exists/exists6.ttl", "pub http://localhost:3000/solid-crud-tests-1615212794056/exists/exists6.ttl"]
+    Received: ["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212794056/exists/exists6.ttl"]
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212455563/exists/exists6.ttl", "pub https://alice.localhost:8443/solid-crud-tests-1615212455563/exists/exists6.ttl"][39m
-    Received: [31m["ack https://alice.localhost:8443/solid-crud-tests-1615212455563/exists/exists6.ttl"][39m
+    Expected: ArrayContaining ["ack https://alice.localhost:8443/solid-crud-tests-1615212455563/exists/exists6.ttl", "pub https://alice.localhost:8443/solid-crud-tests-1615212455563/exists/exists6.ttl"]
+    Received: ["ack https://alice.localhost:8443/solid-crud-tests-1615212455563/exists/exists6.ttl"]
     
 T043
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32mArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212808100/exists/", "pub http://localhost:3000/solid-crud-tests-1615212808100/exists/"][39m
-    Received: [31m["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212808100/exists/"][39m
+    Expected: ArrayContaining ["ack http://localhost:3000/solid-crud-tests-1615212808100/exists/", "pub http://localhost:3000/solid-crud-tests-1615212808100/exists/"]
+    Received: ["protocol solid-0.1", "warning Unrecognized message format: auth ", "warning Unrecognized message format: dpop ", "ack http://localhost:3000/solid-crud-tests-1615212808100/exists/"]
     
 T069
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m5[27mxx"[39m
+    Expected: "2xx"
+    Received: "5xx"
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
 T070
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m5[27mxx"[39m
+    Expected: "2xx"
+    Received: "5xx"
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
 T071
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m501[39m
+    Expected: 403
+    Received: 501
     
 T072
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m5[27mxx"[39m
+    Expected: "2xx"
+    Received: "5xx"
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
 T073
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m5[27mxx"[39m
+    Expected: "2xx"
+    Received: "5xx"
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
 T074
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m501[39m
+    Expected: 403
+    Received: 501
     
 T075
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m5[27mxx"[39m
+    Expected: "2xx"
+    Received: "5xx"
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
 T076
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m501[39m
+    Expected: 403
+    Received: 501
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m415[39m
+    Expected: 403
+    Received: 415
     
 T077
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m501[39m
+    Expected: 403
+    Received: 501
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m415[39m
+    Expected: 403
+    Received: 415
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m415[39m
+    Expected: 403
+    Received: 415
     
 T078
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m5[27mxx"[39m
+    Expected: "2xx"
+    Received: "5xx"
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
 T079
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m501[39m
+    Expected: 403
+    Received: 501
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m415[39m
+    Expected: 403
+    Received: 415
     
 T080
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m501[39m
+    Expected: 403
+    Received: 501
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m415[39m
+    Expected: 403
+    Received: 415
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m415[39m
+    Expected: 403
+    Received: 415
     
 T083
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m201[39m
+    Expected: 403
+    Received: 201
     
 T086
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m201[39m
+    Expected: 403
+    Received: 201
     
 T087
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m205[39m
+    Expected: 403
+    Received: 205
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m201[39m
+    Expected: 403
+    Received: 201
     
 T088
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m5[27mxx"[39m
+    Expected: "2xx"
+    Received: "5xx"
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
 T089
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m5[27mxx"[39m
+    Expected: "2xx"
+    Received: "5xx"
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
 T090
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m501[39m
+    Expected: 403
+    Received: 501
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m415[39m
+    Expected: 403
+    Received: 415
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m415[39m
+    Expected: 403
+    Received: 415
     
 T091
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m501[39m
+    Expected: 403
+    Received: 501
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m415[39m
+    Expected: 403
+    Received: 415
     
 T094
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m201[39m
+    Expected: 403
+    Received: 201
     
 T095
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m205[39m
+    Expected: 403
+    Received: 205
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m201[39m
+    Expected: 403
+    Received: 201
     
 T096
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m5[27mxx"[39m
+    Expected: "2xx"
+    Received: "5xx"
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
 T097
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m5[27mxx"[39m
+    Expected: "2xx"
+    Received: "5xx"
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m"[7m2[27mxx"[39m
-    Received: [31m"[7m4[27mxx"[39m
+    Expected: "2xx"
+    Received: "4xx"
     
 T098
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m501[39m
+    Expected: 403
+    Received: 501
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m415[39m
+    Expected: 403
+    Received: 415
     
   NSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m415[39m
+    Expected: 403
+    Received: 415
     
 T099
   CSS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m501[39m
+    Expected: 403
+    Received: 501
     
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m415[39m
+    Expected: 403
+    Received: 415
     
 T136
   ESS
-    Error: expect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+    Error: expect(received).toEqual(expected) // deep equality
     
-    Expected: [32m403[39m
-    Received: [31m200[39m
+    Expected: 403
+    Received: 200
     
