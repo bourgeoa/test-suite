@@ -153,6 +153,53 @@
 
                     SHOULD results                              25/6/0/31     22/9/0/31     25/6/0/31     
 
+  - WPS
+
+    - Create non-container
+
+    <table><tbody><tr><td></td><td width=465>in an existing container > using POST</td><td width=80>CSS</td><td width=80>ESS</td><td width=80>NSS</td></tr>
+    <tr><td><a href=#T003>T003</a></td><td width=400>   emits websockets-pubsub on the container</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
+    <tr><td><a href=#T006>T006</a></td><td width=400>   emits websockets-pubsub on the container</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
+    <tr><td><a href=#T007>T007</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
+    <tr><td><a href=#T010>T010</a></td><td width=400>   emits websockets-pubsub on the container</td><td width=55><a href=#T010>failed</a></td><td width=55>pending</td><td width=55><a href=#T010>failed</a></td></tr>
+    <tr><td><a href=#T011>T011</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55><a href=#T011>failed</a></td><td width=55>pending</td><td width=55><a href=#T011>failed</a></td></tr>
+    <tr><td><a href=#T014>T014</a></td><td width=400>   emits websockets-pubsub on the parent</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
+    <tr><td><a href=#T015>T015</a></td><td width=400>   emits websockets-pubsub on the container</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
+    <tr><td><a href=#T016>T016</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
+    <tr><td><a href=#T019>T019</a></td><td width=400>   emits websockets-pubsub on the parent</td><td width=55><a href=#T019>failed</a></td><td width=55>pending</td><td width=55><a href=#T019>failed</a></td></tr>
+    <tr><td><a href=#T020>T020</a></td><td width=400>   emits websockets-pubsub on the container</td><td width=55><a href=#T020>failed</a></td><td width=55>pending</td><td width=55><a href=#T020>failed</a></td></tr>
+    <tr><td><a href=#T021>T021</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55><a href=#T021>failed</a></td><td width=55>pending</td><td width=55><a href=#T021>failed</a></td></tr></tbody></table>
+
+    - Update
+
+    <table><tbody><tr><td></td><td width=465>Using PUT, overwriting plain text with plain text</td><td width=80>CSS</td><td width=80>ESS</td><td width=80>NSS</td></tr>
+    <tr><td><a href=#T023>T023</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
+    <tr><td><a href=#T025>T025</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
+    <tr><td><a href=#T027>T027</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
+    <tr><td><a href=#T029>T029</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55><a href=#T029>failed</a></td><td width=55>pending</td><td width=55><a href=#T029>failed</a></td></tr>
+    <tr><td><a href=#T031>T031</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55><a href=#T031>failed</a></td><td width=55>pending</td><td width=55><a href=#T031>failed</a></td></tr>
+    <tr><td><a href=#T033>T033</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55><a href=#T033>failed</a></td><td width=55>pending</td><td width=55><a href=#T033>failed</a></td></tr>
+    <tr><td><a href=#T035>T035</a></td><td width=400>   does not emit websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
+    <tr><td><a href=#T037>T037</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55><a href=#T037>failed</a></td><td width=55>pending</td><td width=55><a href=#T037>failed</a></td></tr>
+    <tr><td><a href=#T039>T039</a></td><td width=400>   does not emit websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr></tbody></table>
+
+    - Delete
+
+    <table><tbody><tr><td></td><td width=465>non-container</td><td width=80>CSS</td><td width=80>ESS</td><td width=80>NSS</td></tr>
+    <tr><td><a href=#T043>T043</a></td><td width=400>   emits websockets-pubsub on the container</td><td width=55><a href=#T043>failed</a></td><td width=55>pending</td><td width=55>passed</td></tr>
+    <tr><td><a href=#T044>T044</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
+    <tr><td><a href=#T047>T047</a></td><td width=400>   does not emit websockets-pubsub on the container</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
+    <tr><td><a href=#T048>T048</a></td><td width=400>   does not emit websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
+    <tr><td><a href=#T050>T050</a></td><td width=400>   emits websockets-pubsub on the container</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr></tbody></table>
+
+    - Create container
+
+    <table><tbody><tr><td></td><td width=465>in an existing container > using PUT</td><td width=80>CSS</td><td width=80>ESS</td><td width=80>NSS</td></tr>
+    <tr><td><a href=#T053>T053</a></td><td width=400>   emits websockets-pubsub on the existing container</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
+    <tr><td><a href=#T054>T054</a></td><td width=400>   emits websockets-pubsub on the new container</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr></tbody></table>
+
+                    WPS results                                 17/10/0/27    0/0/27/27     18/9/0/27     
+
 - wac-results.json                                                
 
   - SHOULD
@@ -275,55 +322,6 @@
     <tr><td><a href=#T143>T143</a></td><td width=400> has an ACL</td><td width=55>passed</td><td width=55>passed</td><td width=55>passed</td></tr></tbody></table>
 
                     SHOULD results                              61/22/0/83    61/22/0/83    67/16/0/83    
-
-- crud-results.json                                               
-
-  - WPS
-
-    - Create non-container
-
-    <table><tbody><tr><td></td><td width=465>in an existing container > using POST</td><td width=80>CSS</td><td width=80>ESS</td><td width=80>NSS</td></tr>
-    <tr><td><a href=#T003>T003</a></td><td width=400>   emits websockets-pubsub on the container</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
-    <tr><td><a href=#T006>T006</a></td><td width=400>   emits websockets-pubsub on the container</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
-    <tr><td><a href=#T007>T007</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
-    <tr><td><a href=#T010>T010</a></td><td width=400>   emits websockets-pubsub on the container</td><td width=55><a href=#T010>failed</a></td><td width=55>pending</td><td width=55><a href=#T010>failed</a></td></tr>
-    <tr><td><a href=#T011>T011</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55><a href=#T011>failed</a></td><td width=55>pending</td><td width=55><a href=#T011>failed</a></td></tr>
-    <tr><td><a href=#T014>T014</a></td><td width=400>   emits websockets-pubsub on the parent</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
-    <tr><td><a href=#T015>T015</a></td><td width=400>   emits websockets-pubsub on the container</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
-    <tr><td><a href=#T016>T016</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
-    <tr><td><a href=#T019>T019</a></td><td width=400>   emits websockets-pubsub on the parent</td><td width=55><a href=#T019>failed</a></td><td width=55>pending</td><td width=55><a href=#T019>failed</a></td></tr>
-    <tr><td><a href=#T020>T020</a></td><td width=400>   emits websockets-pubsub on the container</td><td width=55><a href=#T020>failed</a></td><td width=55>pending</td><td width=55><a href=#T020>failed</a></td></tr>
-    <tr><td><a href=#T021>T021</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55><a href=#T021>failed</a></td><td width=55>pending</td><td width=55><a href=#T021>failed</a></td></tr></tbody></table>
-
-    - Update
-
-    <table><tbody><tr><td></td><td width=465>Using PUT, overwriting plain text with plain text</td><td width=80>CSS</td><td width=80>ESS</td><td width=80>NSS</td></tr>
-    <tr><td><a href=#T023>T023</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
-    <tr><td><a href=#T025>T025</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
-    <tr><td><a href=#T027>T027</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
-    <tr><td><a href=#T029>T029</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55><a href=#T029>failed</a></td><td width=55>pending</td><td width=55><a href=#T029>failed</a></td></tr>
-    <tr><td><a href=#T031>T031</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55><a href=#T031>failed</a></td><td width=55>pending</td><td width=55><a href=#T031>failed</a></td></tr>
-    <tr><td><a href=#T033>T033</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55><a href=#T033>failed</a></td><td width=55>pending</td><td width=55><a href=#T033>failed</a></td></tr>
-    <tr><td><a href=#T035>T035</a></td><td width=400>   does not emit websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
-    <tr><td><a href=#T037>T037</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55><a href=#T037>failed</a></td><td width=55>pending</td><td width=55><a href=#T037>failed</a></td></tr>
-    <tr><td><a href=#T039>T039</a></td><td width=400>   does not emit websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr></tbody></table>
-
-    - Delete
-
-    <table><tbody><tr><td></td><td width=465>non-container</td><td width=80>CSS</td><td width=80>ESS</td><td width=80>NSS</td></tr>
-    <tr><td><a href=#T043>T043</a></td><td width=400>   emits websockets-pubsub on the container</td><td width=55><a href=#T043>failed</a></td><td width=55>pending</td><td width=55>passed</td></tr>
-    <tr><td><a href=#T044>T044</a></td><td width=400>   emits websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
-    <tr><td><a href=#T047>T047</a></td><td width=400>   does not emit websockets-pubsub on the container</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
-    <tr><td><a href=#T048>T048</a></td><td width=400>   does not emit websockets-pubsub on the resource</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
-    <tr><td><a href=#T050>T050</a></td><td width=400>   emits websockets-pubsub on the container</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr></tbody></table>
-
-    - Create container
-
-    <table><tbody><tr><td></td><td width=465>in an existing container > using PUT</td><td width=80>CSS</td><td width=80>ESS</td><td width=80>NSS</td></tr>
-    <tr><td><a href=#T053>T053</a></td><td width=400>   emits websockets-pubsub on the existing container</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr>
-    <tr><td><a href=#T054>T054</a></td><td width=400>   emits websockets-pubsub on the new container</td><td width=55>passed</td><td width=55>pending</td><td width=55>passed</td></tr></tbody></table>
-
-                    WPS results                                 17/10/0/27    0/0/27/27     18/9/0/27     
 
 ### 4. ERROR REPORT
 

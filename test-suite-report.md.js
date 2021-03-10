@@ -162,9 +162,27 @@ Array.prototype.keySort = function(keys) {
   return this;
 };
   
+// https://bithacker.dev/javascript-object-multi-property-sort
+let sortBy = [{
+  prop:'testfile',
+  direction: 1
+},{
+  prop:'level',
+  direction: 1
+}];
+
+let sortedReport = arrayReport.sort(function(a,b) {
+  let i = 0, result = 0;
+  while(i < sortBy.length && result === 0) {
+    result = sortBy[i].direction*(a[ sortBy[i].prop ].toString() < b[ sortBy[i].prop ].toString() ? -1 : (a[ sortBy[i].prop ].toString() > b[ sortBy[i].prop ].toString() ? 1 : 0));
+    i++;
+  }
+  return result; 
+})
 
 // sort array of tests
-let sortedReport = arrayReport.keySort({ testFile: 'asc', level: 'asc'})
+// let sortedReport = arrayReport.keySort({ testfile: 'asc', level: 'asc'})
+// sortedReport.map(test => console.log(test.testfile + ' ' + test.level))
 
 // remove server with no result content
 servers = serversRef
@@ -189,7 +207,7 @@ summary(servers, fileResults)
 
 // report unit tests
 reportContent = reportContent + '\n\n### 3. UNIT TESTS by testFile and level'
-sortedReport = arrayReport.keySort({ testFile: 'asc', level: 'asc'})
+// sortedReport = arrayReport.keySort({ testFile: 'asc', level: 'asc'})
 let tableBegin = true
 sortedReport.forEach(test => {
 
