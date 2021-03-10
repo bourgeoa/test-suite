@@ -163,23 +163,24 @@ Array.prototype.keySort = function(keys) {
 };
   
 // https://bithacker.dev/javascript-object-multi-property-sort
-let sortBy = [{
-  prop:'testfile',
-  direction: 1
-},{
-  prop:'level',
-  direction: 1
-}];
+// function sortByKeys(array, keys) {
+  let sortBy = [{
+    prop:'testfile',
+    direction: 1
+  },{
+    prop:'level',
+    direction: 1
+  }];
 
-let sortedReport = arrayReport.sort(function(a,b) {
-  let i = 0, result = 0;
-  while(i < sortBy.length && result === 0) {
-    result = sortBy[i].direction*(a[ sortBy[i].prop ].toString() < b[ sortBy[i].prop ].toString() ? -1 : (a[ sortBy[i].prop ].toString() > b[ sortBy[i].prop ].toString() ? 1 : 0));
-    i++;
-  }
-  return result; 
-})
-
+  let sortedReport = arrayReport.sort(function(a,b) {
+    let i = 0, result = 0;
+    while(i < sortBy.length && result === 0) {
+      result = sortBy[i].direction*(a[ sortBy[i].prop ].toString() < b[ sortBy[i].prop ].toString() ? -1 : (a[ sortBy[i].prop ].toString() > b[ sortBy[i].prop ].toString() ? 1 : 0));
+      i++;
+    }
+    return result; 
+  })
+// }
 // sort array of tests
 // let sortedReport = arrayReport.keySort({ testfile: 'asc', level: 'asc'})
 // sortedReport.map(test => console.log(test.testfile + ' ' + test.level))
@@ -250,18 +251,26 @@ sortedReport.forEach(test => {
       }
       ancestor = test.ancestors[0]
       reportContent = reportContent +'\n\n    - ' + ancestor
+      if (test.ancestors.length === 1) {
+        reportContent = reportContent + `\n\n    <table><tbody>`
+        tableBegin = false
+        reportContent = reportContent +`<tr><td></td><td width=465> </td>`
+        servers.forEach(server => reportContent = reportContent + `<td width=80>${server}</td>`)
+        reportContent = reportContent + '</tr>'
+
+      }
     }
 
     // begin table
-    if (test.ancestors.length === 1 || ancestors !== test.ancestors.slice(1).join(' > ')) { // toString()) {
+    if (test.ancestors.length !== 1 && ancestors !== test.ancestors.slice(1).join(' > ')) { // toString()) {
       ancestors = test.ancestors.slice(1).join(' > ')
-      if (tableBegin) {
+      // if (tableBegin) {
         reportContent = reportContent + `\n\n    <table><tbody>`
         tableBegin = false
         reportContent = reportContent +`<tr><td></td><td width=465>${ancestors}</td>`
         servers.forEach(server => reportContent = reportContent + `<td width=80>${server}</td>`)
         reportContent = reportContent + '</tr>'
-      }
+      // }
     }
     let result = ''
     servers.   forEach(server => {
