@@ -190,13 +190,13 @@ summary(servers, fileResults)
 // report unit tests
 reportContent = reportContent + '\n\n### 3. UNIT TESTS by testFile and level'
 let tableBegin = true
-let tableEnd = false
+// let tableEnd = false
 sortedReport.forEach(test => {
   // break title on testFile
   if (testFile !== test.testfile) {
-    if (testFile !== '' && tableEnd) {
+    if (testFile !== '' && !tableBegin) {
       reportContent = reportContent + '</tbody></table>'
-      tableEnd = false
+      // tableEnd = false
     }
     if (testFile !== '') reportContent = reportContent + `\n\n${setStringLength('', 20)}${setStringLength(levelTitle + ' results', 44)}${totals(levelTitle)}`
       ancestor = ''
@@ -207,9 +207,9 @@ sortedReport.forEach(test => {
     }
     // break title on level
     if (levelTitle !== test.level) {
-      if (levelTitle !== '' && tableEnd) {
+      if (levelTitle !== '' && !tableBegin) {
         reportContent = reportContent + '</tbody></table>'
-        tableEnd = false
+        // tableEnd = false
       }
   
       // print totals, init level sub-totals
@@ -227,22 +227,22 @@ sortedReport.forEach(test => {
       // if (ancestor === '') reportContent = reportContent + '</tbody></table>'
 
       ancestor = test.ancestors[0]
-      //reportContent = reportContent +'\n- ' + ancestor
-      reportContent = reportContent +`\n\n    <table><thead><tr><td width=465>${ancestor}</td>`
-      servers.forEach(server => reportContent = reportContent + `<td width=80>${server}</td>`)
-      reportContent = reportContent + '</tr></thead></table>'
+      reportContent = reportContent +'\n\n    - ' + ancestor
+      // reportContent = reportContent +`\n\n    <table><thead><tr><td width=465>${ancestor}</td>`
+      // servers.forEach(server => reportContent = reportContent + `<td width=80>${server}</td>`)
+      //reportContent = reportContent + '</tr></thead></table>'
       tableBegin = true
     }
     if (ancestors !== test.ancestors.slice(1).join(' > ')) { // toString()) {
       ancestors = test.ancestors.slice(1).join(' > ')
       // if (ancestors) reportContent = reportContent +'\n\n    - ' + ancestors
-      if (ancestors) {
+      // if (ancestors) {
         tableBegin = false
         reportContent = reportContent + `\n\n    <table><tbody>`
         reportContent = reportContent +`<tr><td></td><td width=465>${ancestors}</td>`
-        // servers.forEach(server => reportContent = reportContent + `<td width=80>${server}</td>`)
+        servers.forEach(server => reportContent = reportContent + `<td width=80>${server}</td>`)
         reportContent = reportContent + '</tr>'
-      }
+      // }
     }
     // reportContent = reportContent + '</thead></table>'
     let result = ''
@@ -260,6 +260,7 @@ sortedReport.forEach(test => {
       if (tableBegin)  {
         reportContent = reportContent + '<table><tbody>'
         tableBegin = false
+        // tableEnd = true
       }
 
       reportContent = reportContent + '\n    ' + table(test) // setStringLength(test.title, 60) + result
@@ -277,7 +278,7 @@ sortedReport.forEach(test => {
   Object.keys(test.errors).forEach(server => {
     if (test.errors[server]) {
       if (ident === '') {
-        reportContent = reportContent + `\n#### <a name="${test.id}">${test.id}</a> ${test.testfile} > ${JSON.stringify(test.ancestors)}\n`
+        reportContent = reportContent + `\n#### <a name=${test.id}>${test.id}</a> ${test.level} > ${test.testfile} > ${JSON.stringify(test.ancestors)}\n`
         ident = test.id
       }
       reportContent = reportContent + '\n  - ' + server + '\n'
